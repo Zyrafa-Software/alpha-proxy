@@ -1,7 +1,7 @@
 import express from "express";
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
-const PORT__DEV = 3333;
+const PORT__DEV = 3000;
 //const sequelize = require("./db");
 const http=require('node:http')
 import cors from "cors";
