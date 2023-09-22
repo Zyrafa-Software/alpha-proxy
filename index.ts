@@ -1,7 +1,7 @@
 import express from "express";
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 //const sequelize = require("./db");
 const http=require('node:http')
 import cors from "cors";
@@ -185,7 +185,9 @@ app.get("/", async (req, res, next) => {
 
 const start = async () => {
   try {
-    app.listen(PORT, "0.0.0.0");
+    app.listen(port,function(){
+      console.log('start')
+    });
   } catch (e) {
     console.log(e);
   }
