@@ -185,7 +185,7 @@ app.get("/", async (req, res, next) => {
 
 const start = async () => {
   try {
-    app.listen(PORT, () =>
+    app.listen("0.0.0.0", () =>
       console.log(`Server started on port ${PORT}`)
       
     );
