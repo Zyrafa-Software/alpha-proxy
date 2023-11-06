@@ -113,7 +113,6 @@ app.get("/", async (req, res, next) => {
 });
 
 app.post("/send-email", (req, res) => {
-  console.log("/send-email", req.body);
   const { email, name, phone, message } = req.body;
 
   const transporter = nodemailer.createTransport({
@@ -136,7 +135,6 @@ app.post("/send-email", (req, res) => {
       console.log(error, info);
       res.status(500).json({ success: false, message: "Error" });
     } else {
-      console.log("Email sent: " + info.response);
       res.json({
         success: true,
         message: "Dziękujemy, konsultant się skontaktuje z tobą!",
@@ -148,7 +146,7 @@ app.post("/send-email", (req, res) => {
 const start = async () => {
   try {
     app.listen(port, function () {
-      console.log(`Started on localhost:${port}`);
+      console.log(`Started on port:${port}`);
     });
   } catch (e) {
     console.log(e);
